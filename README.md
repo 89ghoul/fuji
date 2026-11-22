@@ -7,9 +7,27 @@ Every minute or two a small flock of birds drifts across the sky.
 
 Pure Python 3, standard library only. Works on any Linux terminal (tested for Fedora / Void style setups).
 
-## Run
+## Install (one command)
 
-    python3 fuji.py
+    mkdir -p ~/.local/bin && curl -fsSL https://raw.githubusercontent.com/89ghoul/fuji/main/fuji.py -o ~/.local/bin/fuji && chmod +x ~/.local/bin/fuji
+
+No curl? Use wget instead:
+
+    mkdir -p ~/.local/bin && wget -qO ~/.local/bin/fuji https://raw.githubusercontent.com/89ghoul/fuji/main/fuji.py && chmod +x ~/.local/bin/fuji
+
+Then just run:
+
+    fuji
+
+If `fuji` is not found, add `~/.local/bin` to your PATH (`export PATH="$HOME/.local/bin:$PATH"` in your `~/.bashrc` or `~/.zshrc`).
+
+To update, run the same command again. To remove: `rm ~/.local/bin/fuji`.
+
+## Run without installing
+
+    git clone https://github.com/89ghoul/fuji && python3 fuji/fuji.py
+
+## Controls
 
 | Key | Action |
 |-----|--------|
@@ -25,7 +43,3 @@ Pure Python 3, standard library only. Works on any Linux terminal (tested for Fe
     --seed N             change cloud / mountain details
 
 Needs a terminal of at least 40x14; looks best at 120x40 or larger.
-
-## Install (optional)
-
-    install -m755 fuji.py ~/.local/bin/fuji
